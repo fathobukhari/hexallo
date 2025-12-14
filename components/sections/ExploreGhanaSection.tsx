@@ -24,20 +24,19 @@ export const ExploreGhanaSection: React.FC<ExploreGhanaSectionProps> = ({
     <section className={cn('py-8 md:py-12 lg:py-16', className)}>
       <Container size="xl" paddingSize="medium">
         <SectionHeader title={title} />
-        
         {/* 
-          Approach: Flexbox with flex-wrap
-          - Mobile: 100% width (w-full)
-          - Desktop: Cards can have different widths naturally
-          - All cards maintain same height (280px) via CategoryCard component
-          - No need to specify individual image widths - flexbox handles it automatically
+          Simple flexbox approach - cards auto-adjust to container width
+          - Mobile: 1 column (w-full)
+          - Tablet: 2 columns (flex-1 with min-width)
+          - Desktop: 3 columns (flex-1 with min-width)
+          - Cards maintain same height, width adjusts automatically based on container
         */}
-        <div className="flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4">
           {data.map((category) => (
             <CategoryCard 
               key={category.id} 
               data={category}
-              className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-auto lg:flex-1 lg:min-w-[250px] lg:max-w-[400px]"
+              className="w-full sm:flex-1 sm:min-w-[calc(50%-8px)] md:min-w-[calc(33.333%-11px)]"
             />
           ))}
         </div>

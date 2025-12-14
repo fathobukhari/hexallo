@@ -70,16 +70,14 @@ export default function Home() {
       )}
 
       {/* Blazing Deals Section */}
-      {home.blazingDeals.deals.length > 0 && (
-        <BlazingDealsSection
-          title={home.blazingDeals.title}
-          description={home.blazingDeals.description}
-          deals={home.blazingDeals.deals}
-          countdown={home.blazingDeals.countdown}
-          ctaText={home.blazingDeals.ctaText}
-          ctaHref={home.blazingDeals.ctaHref}
-        />
-      )}
+      <BlazingDealsSection
+        title={home.blazingDeals.title}
+        description={home.blazingDeals.description}
+        deals={home.blazingDeals.deals || []}
+        countdown={home.blazingDeals.countdown}
+        ctaText={home.blazingDeals.ctaText}
+        ctaHref={home.blazingDeals.ctaHref}
+      />
 
        {/* Discover Hidden Gems Section */}
        {home.hiddenGems.length > 0 && (

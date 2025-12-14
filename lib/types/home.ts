@@ -31,6 +31,7 @@ export interface CategoryCardData {
   title: string;
   rating: number;
   href: string;
+  width?: number;
 }
 
 export interface DealCardData {
