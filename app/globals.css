@@ -70,10 +70,10 @@
   --color-primary-600: #0284c7;
   --color-primary-700: #0369a1;
   --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
+  --color-primary-900: #D9D9D9;
   
   /* Secondary colors */
-  --color-secondary-100: #AE6F28;
+  --color-secondary-100: #AE6789;
   --color-secondary-200: #EFC96D;
   --color-secondary-300: #AE6F28;
   --color-secondary-400: #F7E4B6;
@@ -189,5 +189,37 @@ body {
     .scroll-arrow-visible {
       display: none;
     }
+  }
+
+  /* Swiper pagination customization for hero section */
+  .hero-swiper .swiper-pagination {
+    position: absolute !important;
+    bottom: 24px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    display: flex !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 30 !important;
+  }
+
+  .hero-swiper .swiper-pagination-bullet {
+    background: var(--color-primary-900) !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+  }
+
+  .hero-swiper .swiper-pagination-bullet-active {
+    background: var(--color-secondary-300) !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
   }
 }
