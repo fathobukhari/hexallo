@@ -7,13 +7,11 @@ import { ExclusiveCardData } from '@/lib/types/home';
 export interface ExclusiveCardProps {
   data: ExclusiveCardData;
   className?: string;
-  variant?: 'default' | 'large';
 }
 
 export const ExclusiveCard: React.FC<ExclusiveCardProps> = ({
   data,
   className,
-  variant = 'default',
 }) => {
   return (
     <Link href={data.href} className={cn('group block', className)}>

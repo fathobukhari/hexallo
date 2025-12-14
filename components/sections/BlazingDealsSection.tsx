@@ -1,8 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Container } from '@/components/ui/Container';
-import { SectionHeader } from '@/components/shared/SectionHeader';
 import { DealCardData, CountdownData } from '@/lib/types/home';
 import { cn } from '@/lib/utils/cn';
 import Link from 'next/link';
