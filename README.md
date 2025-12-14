@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hexallo
 
-## Getting Started
+Professional Next.js application built with TypeScript and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 16
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Fonts:** Montserrat & Inter
+- **Code Quality:** ESLint, Prettier
+
+## 📁 Project Structure
+
+```
+hexallo/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout with fonts & metadata
+│   ├── page.tsx           # Home page
+│   ├── globals.css        # Global styles
+│   ├── robots.ts          # SEO robots.txt
+│   └── sitemap.ts         # SEO sitemap
+├── components/            # Reusable components
+│   ├── ui/                # UI components (Button, Container, etc.)
+│   ├── layout/            # Layout components
+│   └── sections/          # Page sections
+├── lib/                   # Utilities & configurations
+│   ├── config/            # Site configuration
+│   ├── constants/         # Constants (breakpoints, etc.)
+│   ├── types/             # TypeScript types
+│   └── utils/             # Utility functions
+└── public/                # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Responsive Breakpoints
+- **xs:** 375px (Mobile)
+- **sm:** 640px (Small tablets)
+- **md:** 768px (Tablets)
+- **lg:** 1024px (Desktop)
+- **xl:** 1280px (Large desktop)
+- **2xl:** 1536px (Extra large)
+- **3xl:** 1920px (Ultra wide)
+- **4xl:** 2200px (Maximum width)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Fonts
+- **Primary:** Inter (default)
+- **Secondary:** Montserrat
 
-## Learn More
+## 🛠️ Development
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run development server
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Build for production
+npm run build
 
-## Deploy on Vercel
+# Start production server
+npm start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Lint code
+npm run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Code Standards
+
+- **TypeScript:** Strict mode enabled
+- **Components:** Reusable, typed, and documented
+- **Styling:** Tailwind CSS with utility classes
+- **SEO:** Optimized metadata and sitemap
+- **Performance:** Next.js optimizations enabled
+
+## 🎯 Best Practices
+
+1. **Reusable Components:** All components in `components/ui/` are reusable
+2. **Type Safety:** All props are typed with TypeScript interfaces
+3. **Responsive Design:** Mobile-first approach (375px+)
+4. **Code Quality:** ESLint + Prettier for consistent code
+5. **SEO:** Metadata, sitemap, and robots.txt configured
+
+## 📦 Key Features
+
+- ✅ TypeScript with strict mode
+- ✅ Tailwind CSS v4
+- ✅ Responsive design (375px - 2200px+)
+- ✅ SEO optimized
+- ✅ Font optimization (Montserrat & Inter)
+- ✅ Reusable component architecture
+- ✅ Professional code structure
