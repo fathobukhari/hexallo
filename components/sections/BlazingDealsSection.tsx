@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils/cn';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -132,10 +132,14 @@ export const BlazingDealsSection: React.FC<BlazingDealsSectionProps> = ({
               <div className="h-full pl-4 md:pl-8 pr-0">
                 {deals && deals.length > 0 && (
                   <Swiper
-                    modules={[Navigation]}
+                    modules={[Navigation, Autoplay]}
                     navigation={{
                       nextEl: '.swiper-button-next-deals',
                       prevEl: '.swiper-button-prev-deals',
+                    }}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
                     }}
                     spaceBetween={16}
                     slidesPerView="auto"
@@ -148,11 +152,11 @@ export const BlazingDealsSection: React.FC<BlazingDealsSectionProps> = ({
                           className="group block h-full"
                         >
                           <div className={cn(
-                            'relative rounded-lg p-6 md:p-8 h-[381px] flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow duration-300 min-w-[280px] md:min-w-[354px]',
-                            'border-2 border-transparent hover:border-yellow-400'
+                            'relative p-6 md:p-8 h-[381px] flex flex-col justify-between min-w-[280px] md:min-w-[354px]',
+                            'border-4 rounded-2xl border-transparent hover:border-secondary-200 active-slide-card'
                           )}>
                             {/* Background Image */}
-                            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                            <div className="absolute inset-0 rounded-xl overflow-hidden">
                               <Image
                                 src={deal.background}
                                 alt={deal.title}

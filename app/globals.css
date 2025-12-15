@@ -63,6 +63,7 @@
   --color-secondary-400: #F7E4B6;
   --color-secondary-500: #FAF8ED;
   --color-secondary-600: #2F251D;
+  --color-secondary-700: #31314;
   
   /* Success colors */
   --color-success-100: #dcfce7;
@@ -177,5 +178,10 @@ body {
     height: 12px !important;
     border-radius: 50% !important;
     opacity: 1 !important;
+  }
+
+  /* Blazing Deals Swiper - Active slide border */
+  .swiper-slide-active .active-slide-card {
+    border-color: var(--color-secondary-200) !important;
   }
 }
