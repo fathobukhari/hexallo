@@ -31,9 +31,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data, className }) => 
   };
 
   return (
-    <section className={cn('relative py-8 md:py-12 lg:py-16', className)}>
+    <section className={cn('relative py-8 md:py-10', className)}>
       <Container size="xl" paddingSize="medium">
-        <div className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-lg">
+        <div className="relative h-[570px] overflow-hidden rounded-lg">
           {/* Swiper Background Images Carousel */}
           <div className="absolute inset-0 rounded-lg">
             <Swiper
@@ -44,6 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data, className }) => 
               }}
               pagination={{
                 clickable: true,
+                el: '.hero-pagination',
               }}
               loop={true}
               speed={1000}
@@ -62,30 +63,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data, className }) => 
               ))}
             </Swiper>
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/40 z-10 rounded-lg" />
+            <div className="absolute inset-0 bg-black/20 z-10 rounded-lg" />
           </div>
 
           {/* Content */}
           <div className="relative h-full flex flex-col items-center justify-center z-20">
             {/* Title and Subtitle */}
-            <div className="text-center mb-8 md:mb-12">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter font-bold text-white mb-4">
+            <div className="text-center mb-8 md:mb-12 p-6">
+              <h1 className="text-lg md:text-4xl font-inter font-bold text-white mb-4 leading-[140%] mx-auto md:w-[77%] w-[80%]">
                 {data.title}
               </h1>
-              <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto">
+              <p className="font-semibold text-sm text-white max-w-2xl mx-auto">
                 {data.subtitle}
               </p>
             </div>
 
             {/* Search Bar */}
-            <form onSubmit={handleSearch} className="w-full max-w-4xl">
-              <div className="bg-white rounded-lg p-2 flex flex-col md:flex-row gap-2 shadow-xl">
+            <form onSubmit={handleSearch} className="w-full max-w-2xl hidden md:block">
+              <div className="bg-white rounded-lg ps-5 pe-2 py-1 flex flex-col md:flex-row gap-2 shadow-xl">
                 <input
                   type="text"
                   placeholder={data.searchPlaceholders.event}
                   value={searchQuery.event}
                   onChange={(e) => setSearchQuery({ ...searchQuery, event: e.target.value })}
-                  className="flex-1 px-4 py-3 text-sm font-inter font-normal text-gray-900 placeholder-gray-500 border-none outline-none"
+                  className="flex-1 p-1 text-sm font-inter font-normal text-gray-900 placeholder-gray-500 border-none outline-none"
                 />
                 <div className="w-px bg-gray-200 hidden md:block" />
                 <input
@@ -93,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data, className }) => 
                   placeholder={data.searchPlaceholders.where}
                   value={searchQuery.where}
                   onChange={(e) => setSearchQuery({ ...searchQuery, where: e.target.value })}
-                  className="flex-1 px-4 py-3 text-sm font-inter font-normal text-gray-900 placeholder-gray-500 border-none outline-none"
+                  className="flex-1 p-1 text-sm font-inter font-normal text-secondary-700 placeholder:text-secondary-700 border-none outline-none"
                 />
                 <div className="w-px bg-gray-200 hidden md:block" />
                 <input
@@ -101,11 +102,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data, className }) => 
                   placeholder={data.searchPlaceholders.when}
                   value={searchQuery.when}
                   onChange={(e) => setSearchQuery({ ...searchQuery, when: e.target.value })}
-                  className="flex-1 px-4 py-3 text-sm font-inter font-normal text-gray-900 placeholder-gray-500 border-none outline-none"
+                  className="flex-1 p-1 text-sm font-inter font-normal text-secondary-700 placeholder:text-secondary-700 border-none outline-none"
                 />
                 <button
                   type="submit"
-                  className="bg-secondary-300 hover:bg-secondary-200 text-white px-6 py-3 rounded-md transition-colors flex items-center justify-center min-w-[60px]"
+                  className="bg-secondary-300 hover:bg-secondary-200 text-white p-2 rounded-xl transition-colors flex items-center justify-center min-w-[50px]"
                   aria-label="Search events"
                 >
                   <svg
@@ -126,6 +127,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data, className }) => 
             </form>
           </div>
         </div>
+        
+        {/* Pagination dots - outside image div */}
+        <div className="hero-pagination flex justify-center items-center gap-2 mt-8" />
       </Container>
     </section>
   );

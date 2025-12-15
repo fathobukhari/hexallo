@@ -13,9 +13,13 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ data, className }) =
   return (
     <Link 
       href={data.href} 
-      className={cn('group block', className)}
+      className={cn('group block w-full', className)}
+      style={data.width ? { 
+        '--card-width': `${data.width}px`,
+      } as React.CSSProperties & { '--card-width': string } : undefined}
+      data-width={data.width}
     >
-      <div className="relative w-full h-[222px] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+      <div className="relative w-full h-[222px] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
         {/* Image Background */}
         <div className="absolute inset-0">
           <Image
@@ -30,9 +34,14 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ data, className }) =
         {/* Content using Flexbox */}
         <div className="relative flex flex-col flex-1 min-h-0">
           {/* Top Section - Rating Badge */}
-          <div className="flex justify-start items-start p-4 md:p-6 pb-0 flex-shrink-0">
+          <div className="flex justify-start items-start px-4 pt-6 flex-shrink-0">
             {data.rating && (
-              <div className="flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-md">
+              <div className={cn(
+                'flex items-center gap-1 backdrop-blur-sm px-2 py-1 rounded-xl',
+                ['ghana-events', 'ghana-tours', 'ghana-destinations', 'ghana-places'].includes(data.id)
+                  ? 'bg-white'
+                  : 'bg-black/50'
+              )}>
                 <Image
                   src="/icons/star.svg"
                   alt="Rating"
@@ -40,21 +49,23 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ data, className }) =
                   height={12}
                   className="w-3 h-3"
                 />
-                <span className="text-xs font-inter font-medium text-white">{data.rating}</span>
+                <span className={cn(
+                  'text-xs font-inter font-medium',
+                  ['ghana-events', 'ghana-tours', 'ghana-destinations', 'ghana-places'].includes(data.id)
+                    ? 'text-black'
+                    : 'text-white'
+                )}>{data.rating}</span>
               </div>
             )}
           </div>
           
           {/* Bottom Section - Title and Explore */}
-          <div className="flex flex-col justify-end flex-1 p-4 md:p-6 pt-2">
-            <h3 className="text-lg md:text-xl font-inter font-bold text-white mb-2 group-hover:text-secondary-200 transition-colors">
+          <div className="flex flex-col justify-end flex-1 px-4 pb-6">
+            <h3 className="text-xs font-montserrat font-semibold text-white mb-1">
               {data.title}
             </h3>
-            <span className="inline-flex items-center gap-1 text-sm font-inter font-semibold text-secondary-200 group-hover:text-secondary-300 transition-colors">
+            <span className="text-[10.33px] font-montserrat font-normal text-white">
               Explore
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </span>
           </div>
         </div>

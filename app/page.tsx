@@ -67,6 +67,7 @@ export default function Home() {
           title="Buzzing Destinations"
           data={home.buzzingDestinations}
           columns={4}
+          buzzingDestination={true}
         />
       )}
 

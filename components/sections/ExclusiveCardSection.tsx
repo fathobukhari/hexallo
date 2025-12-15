@@ -33,7 +33,7 @@ export const ExclusiveCardSection: React.FC<ExclusiveCardSectionProps> = ({
   }
 
   return (
-    <section className={cn('py-8 md:py-12 lg:py-16', className)}>
+    <section className={cn('py-8 md:py-10', className)}>
       <Container size="xl" paddingSize="medium">
         <SectionHeader title={title} />
         <div className={cn('grid gap-3', gridCols[columns])}>

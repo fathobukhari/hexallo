@@ -12,6 +12,7 @@ export interface EventCardGridSectionProps {
   columns?: 1 | 2 | 3 | 4;
   showRatingWithTitle?: boolean;
   removeBackground?: boolean;
+  buzzingDestination?: boolean;
 }
 
 export const EventCardGridSection: React.FC<EventCardGridSectionProps> = ({
@@ -21,6 +22,7 @@ export const EventCardGridSection: React.FC<EventCardGridSectionProps> = ({
   columns = 4,
   showRatingWithTitle = false,
   removeBackground = false,
+  buzzingDestination = false,
 }) => {
   const gridCols = {
     1: 'grid-cols-1',
@@ -34,14 +36,14 @@ export const EventCardGridSection: React.FC<EventCardGridSectionProps> = ({
   }
 
   return (
-    <section className={cn('py-8 md:py-12 lg:py-16', className)}>
+    <section className={cn('py-8 md:py-10', className)}>
       <Container size="xl" paddingSize="medium">
         <SectionHeader title={title} />
-        <div className={cn('grid gap-3 md:gap-4', gridCols[columns])} style={{ gridAutoRows: '1fr' }}>
-          {data.map((event) => (
-            <EventCard key={event.id} data={event} showRatingWithTitle={showRatingWithTitle} removeBackground={removeBackground} />
-          ))}
-        </div>
+               <div className={cn('grid gap-3', gridCols[columns])} style={{ gridAutoRows: '1fr' }}>
+                 {data.map((event) => (
+                   <EventCard key={event.id} data={event} showRatingWithTitle={showRatingWithTitle} removeBackground={removeBackground} buzzingDestination={buzzingDestination} />
+                 ))}
+               </div>
       </Container>
     </section>
   );

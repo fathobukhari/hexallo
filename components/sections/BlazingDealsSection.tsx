@@ -58,69 +58,73 @@ export const BlazingDealsSection: React.FC<BlazingDealsSectionProps> = ({
     return () => clearInterval(interval);
   }, [initialCountdown.endDate]);
 
-  // Temporarily removed early return to show layout
-  // if (!deals || deals.length === 0) {
-  //   return null;
-  // }
 
   return (
-    <section className={cn('py-8 md:py-12 lg:py-16 bg-primary-100', className)}>
+    <section className={cn('py-8 md:py-16', className)}>
       <div className="relative w-full">
         <div className="max-w-[1360px] mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex flex-wrap relative">
-            {/* Left Column: 35% - Aligns with container */}
+
             <div className="w-full md:w-[35%]">
-              <div className="mb-8">
-                <h2 className="text-2xl md:text-3xl font-inter font-bold text-gray-900 mb-2">
+              <div className="mb-6">
+                <h2 className="text-lg font-montserrat font-semibold text-primary-200 mb-2">
                   {title}
                 </h2>
                 {description && (
-                  <p className="text-base text-gray-600 font-inter">{description}</p>
+                  <p className="text-xs font-normal font-montserrat text-[ #8A8A8A] w-[70%] leading-[15px]">{description}</p>
                 )}
+              </div>
+
+               {/* CTA Button */}
+               <div className="mb-6">
+                <Link
+                  href={ctaHref}
+                  className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full font-inter text-sm font-normal"
+                >
+                  {ctaText}
+                </Link>
               </div>
                
               {/* Countdown Timer */}
               {mounted && (
                 <div className="mb-8">
-                  <p className="text-sm font-inter font-medium text-red-600 mb-4">Offer ends in...</p>
-                  <div className="flex items-center gap-3 md:gap-4">
-                    <div className="bg-white rounded-lg px-4 py-3 shadow-sm text-center">
-                      <div className="text-2xl md:text-3xl font-inter font-bold text-gray-900">
-                        {String(countdown.days).padStart(2, '0')}
+                  <p className="text-xs font-montserrat font-medium text-error-100 mb-4">Offer ends in...</p>
+                  <div className="flex items-start gap-5">
+                    <div className="flex flex-col items-center">
+                      <div className="bg-white rounded-lg w-[70px] h-[70px] shadow-[0px_4px_14px_1px_rgba(0,0,0,0.16)] flex items-center justify-center">
+                        <div className="text-[24px] font-montserrat font-extrabold text-gray-900">
+                          {String(countdown.days).padStart(2, '0')}
+                        </div>
                       </div>
-                      <div className="text-xs font-inter text-gray-600">Days</div>
+                      <div className="text-xs font-montserrat text-primary-200 mt-2">Days</div>
                     </div>
-                    <div className="bg-white rounded-lg px-4 py-3 shadow-sm text-center">
-                      <div className="text-2xl md:text-3xl font-inter font-bold text-gray-900">
-                        {String(countdown.hours).padStart(2, '0')}
+                    <div className="flex flex-col items-center">
+                      <div className="bg-white rounded-lg w-[70px] h-[70px] shadow-[0px_4px_14px_1px_rgba(0,0,0,0.16)] flex items-center justify-center">
+                        <div className="text-[24px] font-montserrat font-extrabold text-gray-900">
+                          {String(countdown.hours).padStart(2, '0')}
+                        </div>
                       </div>
-                      <div className="text-xs font-inter text-gray-600">Hr</div>
+                      <div className="text-xs font-montserrat text-primary-200 mt-2">Hr</div>
                     </div>
-                    <div className="bg-white rounded-lg px-4 py-3 shadow-sm text-center">
-                      <div className="text-2xl md:text-3xl font-inter font-bold text-gray-900">
-                        {String(countdown.minutes).padStart(2, '0')}
+                    <div className="flex flex-col items-center">
+                      <div className="bg-white rounded-lg w-[70px] h-[70px] shadow-[0px_4px_14px_1px_rgba(0,0,0,0.16)] flex items-center justify-center">
+                        <div className="text-[24px] font-montserrat font-extrabold text-gray-900">
+                          {String(countdown.minutes).padStart(2, '0')}
+                        </div>
                       </div>
-                      <div className="text-xs font-inter text-gray-600">Mins</div>
+                      <div className="text-xs font-montserrat text-primary-200 mt-2">Mins</div>
                     </div>
-                    <div className="bg-white rounded-lg px-4 py-3 shadow-sm text-center">
-                      <div className="text-2xl md:text-3xl font-inter font-bold text-gray-900">
-                        {String(countdown.seconds).padStart(2, '0')}
+                    <div className="flex flex-col items-center">
+                      <div className="bg-white rounded-lg w-[70px] h-[70px] shadow-[0px_4px_14px_1px_rgba(0,0,0,0.16)] flex items-center justify-center">
+                        <div className="text-[24px] font-montserrat font-extrabold text-gray-900">
+                          {String(countdown.seconds).padStart(2, '0')}
+                        </div>
                       </div>
-                      <div className="text-xs font-inter text-gray-600">Sec</div>
+                      <div className="text-xs font-montserrat text-primary-200 mt-2">Sec</div>
                     </div>
                   </div>
                 </div>
               )}
-
-              {/* CTA Button */}
-              <div>
-                <Link
-                  href={ctaHref}
-                  className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-inter font-semibold transition-colors"
-                >
-                  {ctaText}
-                </Link>
-              </div>
             </div>
 
             {/* Right Column: 65% - Extends to edge */}
@@ -135,7 +139,7 @@ export const BlazingDealsSection: React.FC<BlazingDealsSectionProps> = ({
                     }}
                     spaceBetween={16}
                     slidesPerView="auto"
-                    className="h-full deals-swiper"
+                    className=" eals-swiper"
                   >
                     {deals.map((deal) => (
                       <SwiperSlide key={deal.id} className="!w-auto">
@@ -148,7 +152,7 @@ export const BlazingDealsSection: React.FC<BlazingDealsSectionProps> = ({
                             'border-2 border-transparent hover:border-yellow-400'
                           )}>
                             {/* Background Image */}
-                            <div className="absolute inset-0 rounded-lg overflow-hidden">
+                            <div className="absolute inset-0 rounded-2xl overflow-hidden">
                               <Image
                                 src={deal.background}
                                 alt={deal.title}
@@ -159,20 +163,21 @@ export const BlazingDealsSection: React.FC<BlazingDealsSectionProps> = ({
                             </div>
                             
                             {/* Content */}
-                            <div className="relative z-10 flex flex-col justify-between h-full">
+                            <div className="relative z-10 flex align-center items-center justify-center h-full text-center">
                               <div>
-                                <div className="text-sm font-inter font-medium text-gray-800 mb-1">
-                                  {deal.subtitle}
-                                </div>
-                                <h3 className="text-2xl md:text-3xl font-inter font-bold text-gray-900 mb-2">
+                                <h3 className="text-3xl font-inter font-extrabold text-primary-200 mb-1">
                                   {deal.title}
                                 </h3>
-                                <div className="text-xs font-inter text-gray-600 mb-1">
+                                <div className="text-2xl font-inter font-semibold text-primary-200 mb-1">
+                                  {deal.subtitle}
+                                </div>
+                                <div className="text-sm font-bold font-inter text-primary-200 mt-3 my-4">
                                   UP TO
                                 </div>
-                              </div>
-                              <div className="text-3xl md:text-4xl font-inter font-bold text-gray-900">
+                              <div className="text-3xl font-inter font-bold text-primary-200">
                                 {deal.discount}
+                                <span className="text-sm font-semibold font-inter text-primary-200 ml-2">OFF</span>
+                              </div>
                               </div>
                             </div>
                           </div>

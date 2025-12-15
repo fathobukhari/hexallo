@@ -6,14 +6,16 @@
 export interface EventCardData {
   id: string;
   image: string;
-  category: string;
+  category?: string;
   title: string;
   date?: string;
-  time: string;
-  location: string;
-  price: string;
+  time?: string;
+  location?: string;
+  price?: string;
   rating?: number;
   href: string;
+  checkIns?: string;
+  description?: string;
 }
 
 export interface ExclusiveCardData {

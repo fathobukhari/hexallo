@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer
       className={cn(
-        'bg-secondary-300',
+        'bg-secondary-300 md:mt-24',
         className
       )}
     >
