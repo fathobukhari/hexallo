@@ -430,7 +430,7 @@ export const siteConfig = {
         title: 'Private Tours',
         description: "Your guide to the most happening events this weekend — from concerts to pop-ups.",
         ctaText: 'Explore Now',
-        href: '/exclusives/private-tours',
+        href: '/tours',
       },
       {
         id: 'exclusive-2',
@@ -438,7 +438,7 @@ export const siteConfig = {
         title: 'Private Tours',
         description: "Your guide to the most happening events this weekend — from concerts to pop-ups.",
         ctaText: 'Explore Now',
-        href: '/exclusives/private-tours',
+        href: '/tours',
       },
     ],
     hiddenGems: [
@@ -447,7 +447,7 @@ export const siteConfig = {
         image: '/images/discover-1.jpg',
         title: 'The Secret Garden Café',
         description: 'AccraHidden courtyard serving organic brunch & live music evenings.',
-        ctaText: 'Explore Now',
+        ctaText: '',
         href: '/hidden-gems/secret-garden-cafe',
       },
       {
@@ -455,7 +455,7 @@ export const siteConfig = {
         image: '/images/dicover-2.jpg',
         title: "Napa's Underground Jazz",
         description: 'Vintage cellar turned into an intimate live stages.',
-        ctaText: 'Explore Now',
+        ctaText: '',
         href: '/hidden-gems/napa-underground-jazz',
       },
       {
@@ -463,7 +463,7 @@ export const siteConfig = {
         image: '/images/discover-3.jpg',
         title: 'Sky Hammock Trail',
         description: 'BaliSwing over the valley — a serene thrill far from crowds',
-        ctaText: 'Explore Now',
+        ctaText: '',
         href: '/hidden-gems/sky-hammock-trail',
       },
       {
@@ -471,7 +471,7 @@ export const siteConfig = {
         image: '/images/discover.jpg',
         title: 'Sky Hammock Trail',
         description: 'BaliSwing over the valley — a serene thrill far from crowds',
-        ctaText: 'Explore Now',
+        ctaText: '',
         href: '/hidden-gems/sky-hammock-trail',
       },
     ],

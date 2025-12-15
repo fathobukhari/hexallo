@@ -40,12 +40,13 @@ export default function Home() {
         />
       )}
 
-       {/* Exclusives Section */}
-       {home.exclusives.length > 0 && (
+      {/* Exclusives Section */}
+      {home.exclusives.length > 0 && (
         <ExclusiveCardSection
           title="Exclusives"
           data={home.exclusives}
           columns={2}
+          cardVariant="default"
         />
       )}
 
@@ -79,12 +80,14 @@ export default function Home() {
         ctaHref={home.blazingDeals.ctaHref}
       />
 
-       {/* Discover Hidden Gems Section */}
-       {home.hiddenGems.length > 0 && (
+      {/* Discover Hidden Gems Section */}
+      {home.hiddenGems.length > 0 && (
         <ExclusiveCardSection
           title="Discover Hidden Gems"
           data={home.hiddenGems}
           columns={4}
+          cardVariant="compact"
+          showIcon={false}
         />
       )}
 
@@ -96,6 +99,7 @@ export default function Home() {
           data={home.exploreGhana}
         />
       )}
+      
       {/* Ghana's Top 10s Section */}
       {home.ghanasTop10s.length > 0 && (
         <EventCardGridSection
@@ -113,6 +117,7 @@ export default function Home() {
           title="Global Highlights"
           data={home.globalHighlights}
           columns={4}
+          cardVariant="large"
         />
       )}
 

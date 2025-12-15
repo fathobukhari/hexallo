@@ -10,6 +10,8 @@ export interface ExclusiveCardSectionProps {
   data: ExclusiveCardData[];
   className?: string;
   columns?: 2 | 3 | 4;
+  cardVariant?: 'default' | 'compact' | 'large';
+  showIcon?: boolean;
 }
 
 export const ExclusiveCardSection: React.FC<ExclusiveCardSectionProps> = ({
@@ -17,6 +19,8 @@ export const ExclusiveCardSection: React.FC<ExclusiveCardSectionProps> = ({
   data,
   className,
   columns = 2,
+  cardVariant = 'default',
+  showIcon = true,
 }) => {
   const gridCols = {
     2: 'grid-cols-1 md:grid-cols-2',
@@ -32,10 +36,9 @@ export const ExclusiveCardSection: React.FC<ExclusiveCardSectionProps> = ({
     <section className={cn('py-8 md:py-12 lg:py-16', className)}>
       <Container size="xl" paddingSize="medium">
         <SectionHeader title={title} />
-        
-        <div className={cn('grid gap-6 md:gap-8', gridCols[columns])}>
+        <div className={cn('grid gap-3', gridCols[columns])}>
           {data.map((exclusive) => (
-            <ExclusiveCard key={exclusive.id} data={exclusive} />
+            <ExclusiveCard key={exclusive.id} data={exclusive} variant={cardVariant} showIcon={showIcon} />
           ))}
         </div>
       </Container>
